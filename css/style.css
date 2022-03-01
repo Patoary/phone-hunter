@@ -5,3 +5,6 @@ body{
 h1{
     color: rgba(168, 132, 222, 0.944);
 }
+h4{
+    display: none;
+}
