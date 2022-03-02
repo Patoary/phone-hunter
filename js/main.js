@@ -23,7 +23,7 @@ const displaySearchResult = datas => {
             <div class="card-body">
               <h5 class="card-title">${data.brand}</h5>
               <p class="card-text">${data.phone_name}</p>
-              <button onclick ='loadDetails("${data.slug}")' class="btn" >Details</button>
+              <button onclick ='loadDetails("${data.slug}")' class="btn bg-light shadow" >Details</button>
             </div>
           </div>
     `;
@@ -54,7 +54,7 @@ const displayPhoneDetail = details => {
         <h3 class="card-text">Name : ${details.name}</h3>
         <h3 class="card-text">Chipset : ${details.mainFeatures.chipSet}</h3>
         <h3 class="card-text">Memory : ${details.mainFeatures.memory}</h3>
-        <h3 class="card-text">Others : ${details.mainFeatures.sensors}</h3>
+        <h3 class="card-text">Sensors: ${details.mainFeatures.sensors}</h3>
         
         <h5 class="card-text">Release Date : ${details.releaseDate}</h5>
         
