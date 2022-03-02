@@ -8,6 +8,7 @@ const searchPhone = () => {
     .then(data => displaySearchResult(data.data))
     
 };
+//displaySearchResult
 const displaySearchResult = datas => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
@@ -22,7 +23,7 @@ const displaySearchResult = datas => {
             <div class="card-body">
               <h5 class="card-title">${data.brand}</h5>
               <p class="card-text">${data.phone_name}</p>
-              <button onclick ='loadDetailsss("${data.slug}")' class="btn" >Details</button>
+              <button onclick ='loadDetails("${data.slug}")' class="btn" >Details</button>
             </div>
           </div>
     `;
@@ -30,9 +31,9 @@ const displaySearchResult = datas => {
     });
 };
 
-//display details
+//load details
 
-const loadDetailsss = phoneId => {
+const loadDetails = phoneId => {
     const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`;
     
 
@@ -40,6 +41,7 @@ const loadDetailsss = phoneId => {
         .then(res => res.json())
         .then(deta => displayPhoneDetail(deta.data));
 };
+//displayPhoneDetail
 const displayPhoneDetail = details => {
     console.log(details)
     const phonDdetails = document.getElementById('phone-details');
@@ -51,6 +53,8 @@ const displayPhoneDetail = details => {
         <h2 class="card-title">Brand : ${details.brand}</h2>
         <h3 class="card-text">Name : ${details.name}</h3>
         <h3 class="card-text">Chipset : ${details.mainFeatures.chipSet}</h3>
+        <h3 class="card-text">Memory : ${details.mainFeatures.memory}</h3>
+        <h3 class="card-text">Others : ${details.mainFeatures.sensors}</h3>
         
         <h5 class="card-text">Release Date : ${details.releaseDate}</h5>
         
